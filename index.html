@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HandPaint</title>
+<link rel="stylesheet" href="css/app.css?v=20261022o">
+</head>
+<body>
+<div id="app">
+  <div id="main">
+    <div id="stage">
+      <canvas id="paint"></canvas>
+      <canvas id="overlay"></canvas>
+      <div id="recbadge"><i></i><span id="rectime">REC 00:00</span></div>
+      <div id="toasts"></div>
+      <div id="fatal"></div>
+    </div>
+    <div id="cam">
+      <canvas id="camcv" width="512" height="288"></canvas>
+      <div id="camcta">
+        <p id="camtext">Paint with your hands: turn on the camera. Everything stays on your computer.</p>
+        <button id="camon" type="button">Turn on camera</button>
+      </div>
+      <button id="camswitch" type="button">Camera off</button>
+    </div>
+    <div id="hotkeys"></div>
+  </div>
+  <aside id="sidebar">
+    <div id="sb-head"></div>
+    <div id="sb-scroll"></div>
+  </aside>
+</div>
+<script src="js/shaders.js?v=20261022o"></script>
+<script src="js/engine.js?v=20261022o"></script>
+<script src="js/hands.js?v=20261022o"></script>
+<script src="js/app.js?v=20261022o"></script>
+<script>if (location.search.includes("debug")) document.write('<script src="js/debug.js"><\/script>');</script>
+</body>
+</html>
