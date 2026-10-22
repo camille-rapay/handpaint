@@ -173,11 +173,11 @@ function buildSidebar() {
   ui.paintEd = makeColorEditor((hex) => { S.solidHex = hex; if (S.mode !== 2) setMode(2); refresh(); }, true);
   ui.paintEd.el.hidden = true; bcol.appendChild(ui.paintEd.el); ui.paintEd.set('#FF5CA8');
   ui.multi = bcol.appendChild(el('div', 'col'));
-  ui.multi.innerHTML = '<div class="small">Multicolor colors: click one to change it</div>';
+  ui.multi.innerHTML = '<div class="small">Click a color swatch to change it</div>';
   ui.chips = ui.multi.appendChild(el('div', 'chips'));
   ui.multiEd = makeColorEditor((hex, rgb) => { if (S.multiSel != null) { engine.setMultiColor(S.multiSel, rgb.map(Math.round)); refresh(); } }, false);
   ui.multiEd.el.hidden = true; ui.multi.appendChild(ui.multiEd.el);
-  ui.multiReset = ui.multi.appendChild(el('button', 'btn', 'Reset to Sunset colors')); ui.multiReset.type = 'button';
+  ui.multiReset = ui.multi.appendChild(el('button', 'btn', 'Reset to default')); ui.multiReset.type = 'button';
   ui.multiReset.onclick = () => { engine.resetMulti(); refresh(); };
   ui.eraserNote = bcol.appendChild(el('div', 'small', 'Eraser: rubs out paint from every layer, down to transparent'));
   // paint settings
