@@ -199,7 +199,6 @@ function buildSidebar() {
   $('#btn-rec').onclick = toggleRecord; $('#btn-video').onclick = exportVideo; $('#btn-png').onclick = exportPNG;
   $('#btn-undo').onclick = undo; $('#btn-clear').onclick = clearCanvas;
   ui.aspectCard.onclick = () => togglePanel('aspect'); ui.bgCard.onclick = () => togglePanel('bg'); ui.paintCard.onclick = () => togglePanel('paint');
-  sc.addEventListener('scroll', () => $('#sb-head').classList.toggle('scrolled', sc.scrollTop > 2));
 }
 
 function swatchStyle(node, hex) { const v = hexToRgba(hex) || [0, 0, 0, 1]; node.style.setProperty('--c', `rgba(${Math.round(v[0])},${Math.round(v[1])},${Math.round(v[2])},${v[3]})`); }
