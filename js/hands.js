@@ -104,8 +104,8 @@ class HandCtl {
       if (inside) {
         p = [Math.min(Math.max(pos[0] * W, 0), W - 1), Math.min(Math.max(pos[1] * H, 0), H - 1)];
         this.cursor = p;
-        want = this.fingers >= 1;                     // a fist lifts the brush
-      } else { this.cursor = null; this.prev = null; }
+      } else { this.cursor = null; this.prev = null; }   // in the red zone: no brush, but the hand is still followed
+      want = this.fingers >= 1;                       // a fist lifts the brush; leaving the zone does not, so the stroke carries on when you come back
       const cand = Math.min(Math.max(this.fingers, 1), 5) - 1;
       if (cand !== this.level) { if (++this.levelVotes >= 3) { this.level = cand; this.levelVotes = 0; } } else this.levelVotes = 0;
     } else {
